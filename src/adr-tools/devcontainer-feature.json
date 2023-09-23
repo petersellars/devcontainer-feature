@@ -1,0 +1,6 @@
+{
+    "name": "adr-tools",
+    "id": "adr-tools",
+    "version": "1.0.0",
+    "description": "A command-line tool for working with a log of Architecture Decision Records (ADRs)."
+}
