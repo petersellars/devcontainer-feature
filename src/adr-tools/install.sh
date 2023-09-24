@@ -13,7 +13,13 @@ check_packages() {
 	fi
 }
 
-check_packages adr-tools
+check_packages curl ca-certificates
+
+curl -LJO https://github.com/npryce/adr-tools/archive/3.0.0.tar.gz && \
+  mkdir /usr/local/bin/adr && \
+  tar -xzvf adr-tools-3.0.0.tar.gz -C /usr/local/bin/adr --strip-components=1 && \
+  echo "export PATH=$PATH:/usr/local/bin/adr/src" >> ~/.bashrc && \
+  echo "source /usr/local/bin/adr/autocomplete/adr" >> ~/.bashrc
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
